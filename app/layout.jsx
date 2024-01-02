@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
 		<html lang="en">
 			<body className={poppins.className + " flex flex-col min-h-screen"}>
 				<Navbar />
-				<div className="flex-grow m-auto ">{children}</div>
+				<div className="flex-grow">{children}</div>
 				<Footer />
 			</body>
 		</html>
