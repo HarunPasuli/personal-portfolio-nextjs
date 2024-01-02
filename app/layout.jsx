@@ -6,8 +6,8 @@ import Footer from "@/components/Footer";
 const poppins = Poppins({ subsets: ["latin"], weight: ["400", "700"] });
 
 export const metadata = {
-	title: "Portfolio",
-	description: "Personal Portfolio",
+	title: "Harun Pasuli",
+	description: "Harun Pasuli Portfolio Website",
 };
 
 export default function RootLayout({ children }) {
