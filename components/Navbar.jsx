@@ -2,8 +2,8 @@ import Link from "next/link";
 
 const Navbar = () => {
 	return (
-		<nav className="flex  font-bold text-lg text-cloudGray bg-midnightBlue items-center">
-			<div className="flex md:flex-row flex-col p-4 px-20 justify-between items-center w-full">
+		<nav className="flex font-bold text-lg text-cloudGray bg-midnightBlue items-center">
+			<div className="flex md:flex-row flex-col p-4 px-16 justify-between items-center w-full">
 				<Link href="/">
 					<h1 className="text-4xl">Harun Pasuli</h1>
 				</Link>
