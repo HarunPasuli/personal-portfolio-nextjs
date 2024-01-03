@@ -46,8 +46,8 @@ const Navbar = () => {
 						<Menu />
 					</SheetTrigger>
 					<SheetContent className="bg-midnightBlue text-cloudGray">
-						<div className="font-black flex flex-col items-center gap-4 lg:text-lg">
-							<p className="font-blacklg:text-3xl text-xl">My Portfolio</p>
+						<div className="font-black flex flex-col items-center gap-4 lg:text-lg text-3xl">
+							<p className="font-black lg:text-3xl text-4xl">My Portfolio</p>
 							<Link href="/" onClick={toggleSheet}>
 								About
 							</Link>
