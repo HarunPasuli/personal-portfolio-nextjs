@@ -32,7 +32,6 @@ const Navbar = () => {
 	const handleLinkClick = (link) => {
 		console.log(`Link clicked: ${link}`);
 		setActiveLink(link);
-		toggleSheet();
 	};
 	return (
 		<nav
