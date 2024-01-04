@@ -88,7 +88,7 @@ const Navbar = () => {
 			<div className="font-black w-fit flex items-center bg-midnightBlue text-cloudGray gap-8 ml-4 mt-4 lg:text-lg lg:hidden">
 				<Sheet
 					isOpen={isSheetOpen}
-					onClose={toggleSheet}
+					onClose={() => setIsSheetOpen(false)}
 					className="bg-midnightBlue text-cloudGray"
 				>
 					<SheetTrigger>
