@@ -80,6 +80,9 @@ const Sidebar = ({ isOpen, onClose }) => {
 					<button
 						className="close-button py-4 text-3xl text-smoothRed"
 						onClick={onClose}
+						style={{
+							display: isOpen ? "block" : "none",
+						}}
 					>
 						X
 					</button>
