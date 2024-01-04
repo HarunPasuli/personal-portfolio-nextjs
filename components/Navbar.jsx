@@ -92,7 +92,7 @@ const Navbar = () => {
 					className="bg-midnightBlue text-cloudGray"
 				>
 					<SheetTrigger>
-						<Menu size={50} onClick={toggleSheet} />
+						<Menu size={50} />
 					</SheetTrigger>
 					<SheetContent className="bg-midnightBlue text-cloudGray">
 						<div className="font-black flex flex-col items-center gap-4 lg:text-lg text-3xl">
