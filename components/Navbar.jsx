@@ -2,13 +2,19 @@
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet";
+import { IoMdClose } from "react-icons/io";
 import { Menu } from "lucide-react";
-import "./Nabar.css";
+import "./Navbar.css";
+import Sidebar from "./Sidebar";
 
 const Navbar = () => {
 	const [isNavbarFixed, setIsNavbarFixed] = useState(false);
 	const [activeLink, setActiveLink] = useState(""); // State to track active link
+	const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+	const toggleSidebar = () => {
+		setIsSidebarOpen(!isSidebarOpen);
+	};
 
 	const handleScroll = () => {
 		const scrollTop = window.scrollY;
@@ -86,56 +92,13 @@ const Navbar = () => {
 				</div>
 			</div>
 			<div className="font-black w-fit flex items-center bg-midnightBlue text-cloudGray gap-8 ml-4 mt-4 lg:text-lg lg:hidden">
-				<Sheet
-					isOpen={isSheetOpen}
-					onClose={() => setIsSheetOpen(false)}
-					className="bg-midnightBlue text-cloudGray"
-				>
-					<SheetTrigger>
-						<Menu size={50} />
-					</SheetTrigger>
-					<SheetContent className="bg-midnightBlue text-cloudGray">
-						<div className="font-black flex flex-col items-center gap-4 lg:text-lg text-3xl">
-							<p className="font-black lg:text-3xl text-4xl">My Portfolio</p>
-
-							<a
-								href="#home"
-								className={activeLink === "home" ? "active" : ""}
-								onClick={() => handleLinkClick("home")}
-							>
-								Home
-							</a>
-							<a
-								href="#about"
-								className={activeLink === "about" ? "active" : ""}
-								onClick={() => handleLinkClick("about")}
-							>
-								About
-							</a>
-							<a
-								href="#skills"
-								className={activeLink === "skills" ? "active" : ""}
-								onClick={() => handleLinkClick("skills")}
-							>
-								Skills
-							</a>
-							<a
-								href="#my-projects"
-								className={activeLink === "my-projects" ? "active" : ""}
-								onClick={() => handleLinkClick("my-projects")}
-							>
-								My Projects
-							</a>
-							<a
-								href="#contact"
-								className={activeLink === "contact" ? "active" : ""}
-								onClick={() => handleLinkClick("contact")}
-							>
-								Contact
-							</a>
-						</div>
-					</SheetContent>
-				</Sheet>
+				<button onClick={toggleSidebar}>
+					<Menu size={50} />
+				</button>
+				<Sidebar
+					isOpen={isSidebarOpen}
+					onClose={() => setIsSidebarOpen(false)}
+				/>
 			</div>
 		</nav>
 	);
