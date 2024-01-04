@@ -99,13 +99,19 @@ const Navbar = () => {
 							<p className="font-black lg:text-3xl text-4xl">My Portfolio</p>
 
 							<a
+								href="#home"
+								className={activeLink === "home" ? "active" : ""}
+								onClick={() => handleLinkClick("home")}
+							>
+								Home
+							</a>
+							<a
 								href="#about"
 								className={activeLink === "about" ? "active" : ""}
 								onClick={() => handleLinkClick("about")}
 							>
 								About
 							</a>
-
 							<a
 								href="#skills"
 								className={activeLink === "skills" ? "active" : ""}
@@ -113,7 +119,6 @@ const Navbar = () => {
 							>
 								Skills
 							</a>
-
 							<a
 								href="#my-projects"
 								className={activeLink === "my-projects" ? "active" : ""}
@@ -121,7 +126,6 @@ const Navbar = () => {
 							>
 								My Projects
 							</a>
-
 							<a
 								href="#contact"
 								className={activeLink === "contact" ? "active" : ""}
