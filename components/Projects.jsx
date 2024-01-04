@@ -20,7 +20,10 @@ const Projects = () => {
 	};
 
 	return (
-		<section className="gap-10 justify-center text-left bg-cloudGray text-midnightBlue p-16">
+		<section
+			className="gap-10 justify-center text-left bg-cloudGray text-midnightBlue p-16"
+			id="my-projects"
+		>
 			<h2 className="uppercase text-left font-bold text-4xl py-4">
 				My Projects
 			</h2>

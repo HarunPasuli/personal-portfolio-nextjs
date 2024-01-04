@@ -11,7 +11,10 @@ const Hero = () => {
 		deleteSpeed: 30,
 	});
 	return (
-		<section className="flex items-center justify-center align-middle bg-midnightBlue p-16 pb-24">
+		<section
+			className="flex items-center justify-center align-middle bg-midnightBlue p-16 pb-24"
+			id="home"
+		>
 			<div className="flex lg:flex-row flex-col items-center align-middle gap-4 lg:gap-60">
 				<div className="font-bold justify-start text-cloudGray text-left">
 					<h2 className="md:text-5xl text-4xl  leading-tight">

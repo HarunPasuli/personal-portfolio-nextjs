@@ -1,36 +1,85 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
-import {
-	Sheet,
-	SheetClose,
-	SheetContent,
-	SheetDescription,
-	SheetFooter,
-	SheetHeader,
-	SheetTitle,
-	SheetTrigger,
-} from "@/components/ui/sheet";
+import { useState, useEffect } from "react";
+import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
+import "./Nabar.css";
 
 const Navbar = () => {
+	const [isNavbarFixed, setIsNavbarFixed] = useState(false);
+	const [activeLink, setActiveLink] = useState(""); // State to track active link
+
+	const handleScroll = () => {
+		const scrollTop = window.scrollY;
+		setIsNavbarFixed(scrollTop > 50); // Adjust the threshold based on your needs
+	};
+
+	useEffect(() => {
+		window.addEventListener("scroll", handleScroll);
+
+		return () => {
+			window.removeEventListener("scroll", handleScroll);
+		};
+	}, []);
+
 	const [isSheetOpen, setIsSheetOpen] = useState(false);
 
 	const toggleSheet = () => {
 		setIsSheetOpen(!isSheetOpen);
 	};
+
+	const handleLinkClick = (link) => {
+		console.log(`Link clicked: ${link}`);
+		setActiveLink(link);
+		toggleSheet();
+	};
 	return (
-		<nav className="flex font-bold text-lg text-cloudGray bg-midnightBlue items-center">
+		<nav
+			className={`flex lg:fixed top-0 left-0 lg:w-full w-fit font-bold text-lg text-cloudGray bg-midnightBlue items-center ${
+				isNavbarFixed ? "fixed-navbar" : ""
+			}`}
+		>
 			<div className="lg:flex lg:flex-row hidden flex-col p-4 px-16 justify-between items-center w-full">
 				<Link href="/">
 					<h1 className="text-4xl">Harun Pasuli</h1>
 				</Link>
 				<div className="flex space-x-4">
-					<a href="#about">About</a>
-					<a href="#skills">Skills</a>
-					<a href="#my-projects">My Projects</a>
-					<a href="#contact">Contact</a>
+					<a
+						href="#home"
+						className={activeLink === "home" ? "active" : ""}
+						onClick={() => handleLinkClick("home")}
+					>
+						Home
+					</a>
+					<a
+						href="#about"
+						className={activeLink === "about" ? "active" : ""}
+						onClick={() => handleLinkClick("about")}
+					>
+						About
+					</a>
+					<a
+						href="#skills"
+						className={activeLink === "skills" ? "active" : ""}
+						onClick={() => handleLinkClick("skills")}
+					>
+						Skills
+					</a>
+					<a
+						href="#my-projects"
+						className={activeLink === "my-projects" ? "active" : ""}
+						onClick={() => handleLinkClick("my-projects")}
+					>
+						My Projects
+					</a>
+					<a
+						href="#contact"
+						className={activeLink === "contact" ? "active" : ""}
+						onClick={() => handleLinkClick("contact")}
+					>
+						Contact
+					</a>
 				</div>
 				<div className="bg-smoothRed rounded-sm px-8 py-1">
 					<button className="uppercase">Download CV</button>
@@ -43,23 +92,43 @@ const Navbar = () => {
 					className="bg-midnightBlue text-cloudGray"
 				>
 					<SheetTrigger>
-						<Menu />
+						<Menu size={50} />
 					</SheetTrigger>
 					<SheetContent className="bg-midnightBlue text-cloudGray">
 						<div className="font-black flex flex-col items-center gap-4 lg:text-lg text-3xl">
 							<p className="font-black lg:text-3xl text-4xl">My Portfolio</p>
-							<Link href="/" onClick={toggleSheet}>
+
+							<a
+								href="#about"
+								className={activeLink === "about" ? "active" : ""}
+								onClick={() => handleLinkClick("about")}
+							>
 								About
-							</Link>
-							<Link href="/about" onClick={toggleSheet}>
+							</a>
+
+							<a
+								href="#skills"
+								className={activeLink === "skills" ? "active" : ""}
+								onClick={() => handleLinkClick("skills")}
+							>
 								Skills
-							</Link>
-							<Link href="/contact" onClick={toggleSheet}>
+							</a>
+
+							<a
+								href="#my-projects"
+								className={activeLink === "my-projects" ? "active" : ""}
+								onClick={() => handleLinkClick("my-projects")}
+							>
 								My Projects
-							</Link>
-							<Link href="/" onClick={toggleSheet}>
+							</a>
+
+							<a
+								href="#contact"
+								className={activeLink === "contact" ? "active" : ""}
+								onClick={() => handleLinkClick("contact")}
+							>
 								Contact
-							</Link>
+							</a>
 						</div>
 					</SheetContent>
 				</Sheet>

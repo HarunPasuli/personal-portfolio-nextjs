@@ -35,7 +35,10 @@ const Contact = () => {
 	};
 
 	return (
-		<section className="flex flex-col justify-center align-middle text-left bg-midnightBlue text-cloudGray p-16">
+		<section
+			className="flex flex-col justify-center align-middle text-left bg-midnightBlue text-cloudGray p-16"
+			id="contact"
+		>
 			<div className="flex justify-center flex-col w-fit">
 				<h2 className="uppercase font-bold text-4xl py-4">Contact Me</h2>
 			</div>

@@ -30,18 +30,19 @@ export default function MainLayout({ children }) {
 				{loading ? (
 					<div className="loader-container bg-smoothRed">
 						<div className="loader-background"></div>
-						<div className="loader-content flex justify-center items-center w-full h-[100vh] align-middle">
+						<div className="loader-content flex justify-center items-center w-full h-screen align-middle">
 							<ClimbingBoxLoader
 								color={"#ECF0F1"}
 								loading={loading}
 								size={50}
 								aria-label="Loading Spinner"
 								data-testid="loader"
+								className="sm:size-20 lg:size-100" // Adjust the sizes as needed
 							/>
 						</div>
 					</div>
 				) : (
-					<div className="flex-grow m-auto max-w-[1200px] bg-midnightBlue">
+					<div className="flex-grow m-auto lg:max-w-[1200px] bg-midnightBlue">
 						<Navbar />
 						{children}
 						<Footer />

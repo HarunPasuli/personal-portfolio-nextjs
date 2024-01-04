@@ -3,6 +3,7 @@ import Contact from "@/components/Contact";
 import Hero from "@/components/Hero";
 import Projects from "@/components/Projects";
 import Skills from "@/components/Skills";
+import TopButton from "@/components/TopButton";
 
 const Home = () => {
 	return (
@@ -12,6 +13,7 @@ const Home = () => {
 			<Skills />
 			<Projects />
 			<Contact />
+			<TopButton />
 		</>
 	);
 };

@@ -3,7 +3,10 @@ import { skills } from "@/constants/skills";
 
 const Skills = () => {
 	return (
-		<section className="gap-10 justify-center text-left bg-cloudGray text-midnightBlue p-16">
+		<section
+			className="gap-10 justify-center text-left bg-cloudGray text-midnightBlue p-16"
+			id="skills"
+		>
 			<h2 className="uppercase text-left font-bold text-4xl py-4">Skills</h2>
 			<div className="flex flex-col items-center"></div>
 			<div className="mt-10">
