@@ -45,7 +45,7 @@ const Sidebar = ({ isOpen, onClose }) => {
 					top: 0,
 					left: 0,
 					width: "100%",
-					height: "100vh",
+					height: "200vh",
 					backgroundColor: "rgba(0, 0, 0, 0.5)",
 					zIndex: 999,
 					transition: "opacity 0.3s ease-in-out",
@@ -56,7 +56,7 @@ const Sidebar = ({ isOpen, onClose }) => {
 			<div
 				className={`sidebar ${
 					isOpen || isClosing
-						? "open visible p-8 text-cloudGray bg-midnightBlue"
+						? "open visible p-8 100vh text-cloudGray bg-midnightBlue"
 						: "hidden"
 				}`}
 				style={{
@@ -67,7 +67,7 @@ const Sidebar = ({ isOpen, onClose }) => {
 						: isClosing
 						? "slideOut 0.3s ease-in-out"
 						: "",
-					height: "100vh",
+					height: "200vh", // This should make it full height
 					position: "fixed",
 					top: 0,
 					left: 0,
@@ -88,7 +88,7 @@ const Sidebar = ({ isOpen, onClose }) => {
 					<h1 className="text-4xl">Harun Pasuli</h1>
 				</Link>
 				<div
-					className={`flex flex-col space-y-4 mt-4 ${
+					className={`flex flex-col space-y-4 text-[1.65rem] mt-4 gap-2 ${
 						isVisible ? "visible" : ""
 					}`}
 				>
