@@ -68,7 +68,7 @@ const Sidebar = ({ isOpen, onClose }) => {
 						? "slideOut 0.3s ease-in-out"
 						: "",
 					height: "100vh",
-					position: isOpen ? "fixed" : "absolute", // Change the position property
+					position: "fixed",
 					top: 0,
 					left: 0,
 					width: "50%", // Adjust this value to cover half of the screen
