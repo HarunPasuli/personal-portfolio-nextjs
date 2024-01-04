@@ -25,7 +25,8 @@ const Navbar = () => {
 
 	const [isSheetOpen, setIsSheetOpen] = useState(false);
 
-	const toggleSheet = () => {
+	const toggleSheet = (e) => {
+		e.preventDefault(); // Prevent the default behavior
 		setIsSheetOpen(!isSheetOpen);
 	};
 
@@ -91,7 +92,7 @@ const Navbar = () => {
 					className="bg-midnightBlue text-cloudGray"
 				>
 					<SheetTrigger>
-						<Menu size={50} />
+						<Menu size={50} onClick={toggleSheet} />
 					</SheetTrigger>
 					<SheetContent className="bg-midnightBlue text-cloudGray">
 						<div className="font-black flex flex-col items-center gap-4 lg:text-lg text-3xl">
