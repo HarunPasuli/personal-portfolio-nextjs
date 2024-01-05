@@ -42,7 +42,7 @@ const Navbar = () => {
 	};
 	return (
 		<nav
-			className={`flex lg:fixed top-0 left-0 lg:w-full w-fit font-bold text-lg text-cloudGray bg-midnightBlue items-center ${
+			className={`flex fixed max-w-md:relative z-50 top-0 left-0 lg:w-full w-fit font-bold text-lg text-cloudGray bg-midnightBlue items-center ${
 				isNavbarFixed ? "fixed-navbar" : ""
 			}`}
 		>
@@ -91,7 +91,7 @@ const Navbar = () => {
 					<button className="uppercase">Download CV</button>
 				</div>
 			</div>
-			<div className="font-black w-fit flex items-center bg-midnightBlue text-cloudGray gap-8 ml-4 mt-4 lg:text-lg lg:hidden">
+			<div className="font-black w-[200vw] overflow-x-hidden flex items-center pb-2 bg-midnightBlue text-cloudGray gap-8 ml-4 mt-4 lg:text-lg lg:hidden">
 				<button onClick={toggleSidebar}>
 					<Menu size={50} />
 				</button>

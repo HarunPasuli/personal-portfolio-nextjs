@@ -8,12 +8,12 @@ import TopButton from "@/components/TopButton";
 const Home = () => {
 	return (
 		<>
-			<Hero />
+			{/* <Hero />
 			<About />
 			<Skills />
 			<Projects />
 			<Contact />
-			<TopButton />
+			<TopButton /> */}
 		</>
 	);
 };
