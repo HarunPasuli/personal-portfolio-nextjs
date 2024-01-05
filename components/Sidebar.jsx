@@ -5,33 +5,30 @@ import "./Navbar.css";
 const Sidebar = ({ isOpen, onClose }) => {
 	const [isVisible, setIsVisible] = useState(false);
 	const [isClosing, setIsClosing] = useState(false);
+	const [isAnimating, setIsAnimating] = useState(false);
 
 	useEffect(() => {
 		if (isOpen) {
+			setIsAnimating(true);
 			setIsVisible(true);
 			document.body.style.overflow = "hidden";
 		} else {
-			setIsClosing(true); // Trigger closing animation
-			setTimeout(() => {
-				setIsVisible(false);
-				setIsClosing(false);
-				document.body.style.overflow = "";
-			}, 300); // Match the duration of the slideOut animation (300ms in this case)
+			setIsAnimating(true);
+			document.body.style.overflow = "";
 		}
 	}, [isOpen]);
 
 	const handleOverlayClick = () => {
-		console.log("Overlay clicked");
 		onClose();
 	};
 
 	const handleCloseButtonClick = () => {
-		setIsClosing(true); // Trigger closing animation
+		setIsAnimating(true);
+		document.body.style.overflow = "";
 		setTimeout(() => {
 			onClose();
 			setIsVisible(false);
-			setIsClosing(false);
-			document.body.style.overflow = "";
+			setIsAnimating(false);
 		}, 300); // Match the duration of the slideOut animation (300ms in this case)
 	};
 
@@ -76,17 +73,14 @@ const Sidebar = ({ isOpen, onClose }) => {
 				}}
 			>
 				{/* Close button (X) with animation */}
-				{isOpen && (
-					<button
-						className="close-button py-4 text-3xl text-smoothRed"
-						onClick={onClose}
-						style={{
-							display: isOpen ? "block" : "none",
-						}}
-					>
-						X
-					</button>
-				)}
+				{/* {isOpen && ( */}
+				<button
+					className="close-button py-4 text-3xl text-smoothRed"
+					onClick={onClose}
+				>
+					X
+				</button>
+				{/* )} */}
 				<Link href="/">
 					<h1 className="text-4xl">Harun Pasuli</h1>
 				</Link>
