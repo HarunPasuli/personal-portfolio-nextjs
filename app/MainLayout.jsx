@@ -50,7 +50,7 @@ const MainLayout = ({ children }) => {
 	return (
 		<html lang="en">
 			<Head>
-				<meta name="viewport" content="width=1000; user-scalable=0;" />
+				<meta name="viewport" content="width=device-width" />
 			</Head>
 			<body
 				className={`${
