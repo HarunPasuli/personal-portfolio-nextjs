@@ -9,6 +9,7 @@ import Contact from "@/components/Contact";
 import Hero from "@/components/Hero";
 import Projects from "@/components/Projects";
 import Skills from "@/components/Skills";
+import Head from "next/head";
 import TopButton from "@/components/TopButton";
 
 import ClimbingBoxLoader from "react-spinners/ClimbingBoxLoader";
@@ -48,12 +49,9 @@ const MainLayout = ({ children }) => {
 
 	return (
 		<html lang="en">
-			<head>
-				<meta
-					name="viewport"
-					content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
-				/>
-			</head>
+			<Head>
+				<meta name="viewport" content="width=1000; user-scalable=0;" />
+			</Head>
 			<body
 				className={`${
 					poppins.className

@@ -31,7 +31,7 @@ const Hero = () => {
 						ideas to life through code.
 					</p>
 				</div>
-				<div>
+				<div className="flex items-center justify-center align-middle">
 					<Image
 						src="/assets/assets/HeaderImg.png"
 						width={500}
