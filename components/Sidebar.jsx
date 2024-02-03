@@ -29,7 +29,7 @@ const Sidebar = ({ isOpen, onClose }) => {
 			onClose();
 			setIsVisible(false);
 			setIsAnimating(false);
-		}, 300); // Match the duration of the slideOut animation (300ms in this case)
+		}, 300);
 	};
 
 	return (

@@ -7,10 +7,9 @@ const ProjectCard = ({ title, stack, imgUrl }) => {
 			<div className="w-full flex flex-col items-center justify-center py-[30px] p-2 h-64 md:py-[60px] rounded-md bg-light-bg">
 				<Image src={imgUrl} width={400} height={180} alt={title} />
 				<p className="text-cloudGray text-xl mt-3">{title}</p>
-				<div className="flex mt-2">
-					<FaGithub className="mr-2" />
-					<FaEye />
-				</div>
+				{/* <FaGithub className="mr-2" />
+				<FaEye /> */}
+				<div className="flex mt-2 z-50"></div>
 			</div>
 		</li>
 	);

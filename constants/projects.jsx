@@ -14,4 +14,9 @@ export const projects = [
 		stack: ["React", "Tailwind", "Vite"],
 		imgUrl: "/assets/projects/RecipeBook.png",
 	},
+	{
+		title: "Personal Portfolio",
+		stack: ["NextJS", "Tailwind"],
+		imgUrl: "/assets/projects/PersonalPortfolio.png",
+	},
 ];
